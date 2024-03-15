@@ -19,7 +19,7 @@ class Publisher:
             credentials=pika.credentials.PlainCredentials(self.USER, self.PASS))
         self._conn = None
         self._channel = None
-
+ 
     def _connect(self):
         if not self._conn or self._conn.is_closed or self._channel is None or self._channel.is_closed:
             self._conn = pika.BlockingConnection(self._params)
